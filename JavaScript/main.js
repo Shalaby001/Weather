@@ -121,19 +121,20 @@ function displayInfo(data) {
     
     
     // Image top right 
-    let SunRise = data.forecast.forecastday[0].astro.sunrise;
+    // let SunRise = data.forecast.forecastday[0].astro.sunrise;
 
-    let currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    // let currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     
-    let currentHour = parseInt(currentTime); 
-    let sunriseHour = parseInt(SunRise.split(':')[0]);
+    // let currentHour = parseInt(currentTime); 
+    // let sunriseHour = parseInt(SunRise.split(':')[0]);
     
-    if (currentHour > sunriseHour) {
-        TopRightIcon.innerHTML = `<img src="imgs/sun.png" alt="sun">`;
-    } else  {
-        TopRightIcon.innerHTML = `<img src="imgs/half-moon (1).png" alt="moon">`;
+    // if (currentHour > sunriseHour) {
+    //     TopRightIcon.innerHTML = `<img src="imgs/sun.png" alt="sun">`;
+    // } else  {
+    //     TopRightIcon.innerHTML = `<img src="imgs/half-moon (1).png" alt="moon">`;
 
-    }
+    // }
+
 
 
 }
