@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="Css/all.min.css " />
+    <!-- Bootstrap Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<!-- fav icon -->
+ <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon.png">
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <!-- Main Css -->
+    <link rel="stylesheet" href="Css/main.css" />
+  </head>
+
+  <body class="p-5 pb-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              id="location-input"
+              placeholder="Enter the city name"
+              aria-label="default input example"
+            />
+          </div>
+          <div class="row justify-content-between mt-4">
+            <!-- Top Left -->
+            <div class="col-md-4 text-white d-flex flex-column text-center text-lg-start">
+              <div class="mt-0">
+                <h3 id="City"></h3>
+                <h5>
+                  <span id="TodayDate"></span> <span id="Monthdate"></span>
+                </h5>
+
+              </div>
+              <h4 class="mt-3 mb-0">Now</h4>
+
+              <div class="">
+                <h3 class="display-4"><span id="Temperature"></span></h3>
+              </div>
+            </div>
+            <!-- Top Right -->
+            <div class="col-md-4 d-flex order-first  order-md-last ms-md-auto " id="TopRightIcon">
+              
+            </div>
+          </div>
+          <!-- TODAY FORECAST -->
+          <div class="p-4 text-white backcoler my-5  rounded-4">
+            <p class="text-white">TODAY FORECAST</p>
+            <div>
+              <div class="row mt-3 gy-4 p-3 text-center">
+                <div class="col-md-2 border-end border-2">
+                  <p class="mb-3">6:00 AM</p>
+                  <div id="SixclockIco"></div>
+                  <p id="sixclock"></p>
+                  <hr class="d-md-none">
+                </div>
+                <div class="col-md-2 border-end border-2">
+                  <p class="mb-3">9:00 AM</p>
+                  <div id="O9clockIco"></div>
+                  <p id="O9clock"></p>
+                  <hr class="d-md-none">
+                </div>
+                <div class="col-md-2 border-end border-2">
+                  <p class="mb-3">12:00 PM</p>
+                  <div id="O12clockIco"></div>
+                  <p id="O12clock"></p>
+                  <hr class="d-md-none">
+                </div>
+                <div class="col-md-2 border-end border-2">
+                  <p class="mb-3">3:00 PM</p>
+                  <div id="O3clockIco"></div>
+                  <p id="O3clock"></p>
+                  <hr class="d-md-none">
+                </div>
+                <div class="col-md-2 border-end border-2">
+                  <p class="mb-3">6:00 PM</p>
+                  <div id="O6clockIco"></div>
+                  <p id="O6clock"></p>
+                  <hr class="d-md-none">
+                </div>
+                <div class="col-md-2">
+                  <p class="mb-3">9:00 PM</p>
+                  <div id="O9PmclockIco"></div>
+                  <p id="O9Pmclock"></p>
+                  <hr class="d-md-none">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Air condition -->
+          <div class="backcoler mt-5 rounded-4 p-4">
+            <p>Air condition</p>
+            <div class="row p-3">
+              <div class="col-md-6 col-lg-3 d-flex p-3">
+                <i class="fa-solid mt-2 fs-3 fa-temperature-three-quarters"></i>
+                <div class="ms-3 fs-4">
+                  <p>Real feel</p>
+                  <p class="text-white fs-2" id="feels"></p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 d-flex p-3">
+                <i class="fa-solid mt-2 fs-3 fa-wind"></i>
+                <div class="ms-3 fs-4">
+                  <p id="">Wind</p>
+                  <p class="text-white fs-2" id="WindSpeed"></p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 d-flex p-3">
+                <i class="fa-solid mt-2 fs-3 fa-droplet"></i>
+                <div class="ms-3 fs-4">
+                  <p>humidity</p>
+                  <p class="text-white fs-2" id="Humidity"></p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 d-flex p-3">
+                <i class="fa-solid mt-2 fs-3 fa-sun"></i>
+                <div class="ms-3 fs-4">
+                  <p>UV index</p>
+                  <p class="text-white fs-2">3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 12 Days weather -->
+        <div class="col-lg-3 offset-lg-1 backcoler rounded-4 mt-md-3 mt-sm-3 p-4 pb-0">
+          <p class="h3 text-white">12-days weather</p>
+          
+          <div class="weather-container">
+            <div class="weather-item">
+                <p class="text-white" id="Tday">TODAY</p>
+                <p class="text-white text-center" id="TdayFeel"></p>
+                <p class="text-white text-end"><span id="TdayTemp"></span> / <span class="text-secondary" id="TdaydeepC"></span></p>
+            </div>
+            <hr class="text-white" />
+    
+            <div class="weather-item">
+                <p class="text-white" id="Tday2">TOMORROW</p>
+                <p class="text-white text-center" id="TdayFeel2"></p>
+                <p class="text-white text-end"><span id="TdayTemp2"></span> / <span class="text-secondary" id="TdaydeepC2"></span></p>
+            </div>
+            <hr class="text-white" />
+    
+            <div class="weather-item">
+                <p class="text-white" id="Tday3"></p>
+                <p class="text-white text-center" id="TdayFeel3"></p>
+                <p class="text-white text-end"><span id="TdayTemp3"></span> / <span class="text-secondary" id="TdaydeepC3"></span></p>
+            </div>
+        </div>
+  
+      
+          
+          <!-------------------------UNUSED ---------------------------------------->
+          <div id="UNUSED">
+            <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p >TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p class="">TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+          <hr class="text-white" />
+          <div class="d-flex mt-4 justify-content-between">
+            <p>TODAY</p>
+
+            <i class="bi bi-brightness-high"><span class="ms-2">Sunny</span></i>
+            <p>32/26</p>
+          </div>
+
+          <hr class="text-white" />
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="JavaScript/bootstrap.bundle.min.js"></script>
+    <!-- Main JavaSCript -->
+    <script src="JavaScript/main.js"></script>
+  </body>
+</html>
